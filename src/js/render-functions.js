@@ -22,7 +22,7 @@ function imageTemplate({ webformatURL, largeImageURL, tags, likes, views, commen
   `;
 }
 
-export default function createGallery(images) {
+function createGallery(images) {
     const markup = images.map(imageTemplate).join('');
     gallery.insertAdjacentHTML('beforeend', markup);
     lightbox.refresh();
@@ -43,6 +43,6 @@ function hideLoader() {
 }    
 
 
-export { clearGallery, showLoader, hideLoader };
+export { createGallery, clearGallery, showLoader, hideLoader };
     
   
